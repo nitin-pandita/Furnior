@@ -1,8 +1,23 @@
-# React + Vite
+# Furniture Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Furniro
 
-Currently, two official plugins are available:
+![Untitled](Furniture%20Website%2016db37d76f774fdc85e1082639083785/Untitled.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Technology used:
+
+- React Js
+- Tailwind Css
+
+Recreating the design of the furniture website using vite js , the main reason of choosing vite js was to get faster reload and quick page transition.
+
+### Goals
+
+1. To make this website responsive
+2. Setting up the Login form
+3. Connecting it with the backend
+4. Making it more optimal
+
+# Mobile View
+
+![Untitled](Furniture%20Website%2016db37d76f774fdc85e1082639083785/Untitled%201.png)
