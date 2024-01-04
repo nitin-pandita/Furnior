@@ -3,13 +3,41 @@
 @tailwind utilities;
 
 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 
 }
+/* custom button */
+.max-width {
+  @apply max-w-[1440px] mx-auto;
+}
+
+.padding-x {
+  @apply sm:px-16 px-6;
+}
+
+.padding-y {
+  @apply py-4;
+}
+
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+.flex-between {
+  @apply flex justify-between items-center;
+}
+
+.custom-btn {
+  @apply flex flex-row relative justify-center items-center py-3 px-6 outline-none;
+}
 
 .list-style {
-    @apply hover:text-primaryColor hover:cursor-pointer text-[18px];
+  @apply hover:text-primaryColor hover:cursor-pointer text-[18px];
 }
+/*  */
 
 .intro {
     background-image: url('./assets/IntroImage.jpg');
@@ -32,6 +60,7 @@
 
 .card {
   width: 350px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,6 +68,7 @@
   padding: 15px;
   text-align: center;
   margin: 10px;
+  overflow: hidden;
   transition: transform 0.3s ease-in-out;
 
   
@@ -71,48 +101,111 @@
 
 .divider {
   width: 100%;
-  height: 1px;
-  background-color: #ddd;
+  height: 7px;
+  background-color: red;
   margin: 10px 0;
 
 }
+/* Import this CSS in your component or add it to your style sheet */
 .product-card {
-  width: 350px;
-  height: 500px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin: 10px;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  width: 300px;
   overflow: hidden;
+  margin: 10px;
 }
 
 .product-card:hover {
-  transform: scale(1.05);
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  background-color: #fff;
-  border-radius: 8px;
-}
-
-.product-card:hover:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
 }
 
 .product-card-img {
   width: 100%;
-  height: 300px;
+  height: 250px;
   object-fit: cover;
-
 }
+
+.card-description {
+  padding: 15px;
+}
+
+.text-2xl {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.font-light {
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.text-2xl.price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #4caf50;
+}
+
+.buy-now-btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buy-now-btn:hover {
+  background-color: #45a049;
+}
+
+/* carousel styling */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 80%;
+    margin: 50px auto;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/*  */
 .btn-transition {
     @apply transition-all duration-300 ease-in-out;
 
@@ -126,6 +219,62 @@
   border-radius: 5%;
   padding: 15px;
 }
+
+/* Login Page */
+/* Login.css */
+.login-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+}
+
+h2 {
+  color: #333333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  display: block;
+  margin: 10px 0;
+  color: #555555;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 15px 0;
+  box-sizing: border-box;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #4caf50;
+  color: #ffffff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+
+
+
+
+
 
 /* tailwind classes */
 .floater-right {
@@ -156,4 +305,115 @@
 }
 .line {
     @apply h-0.5 w-[100%] mb-2 bg-primaryColor rounded-full;
+}
+
+@layer utilities {
+  .btn_white { 
+    @apply  border-white bg-white px-8 py-3 text-green-50
+  }
+  .btn_white_text  { 
+    @apply  border-white bg-white px-8 py-3 text-gray-90
+  }
+  .btn_green  { 
+    @apply  border-green-500 bg-green-500 px-8 py-5 text-white
+  }
+  .btn_dark_green { 
+    @apply  bg-green-900 px-8 py-4 text-white transition-all hover:bg-black
+  }
+  .btn_dark_green_outline  { 
+    @apply border-gray-20 bg-green-90 px-8 py-5 text-white
+  }
+  
+  .max-container {
+    @apply mx-auto max-w-[1440px];
+  }
+
+  .padding-container {
+    @apply px-6 lg:px-20 xl:px-0;
+  }
+
+  .flexCenter {
+    @apply flex items-center justify-center;
+  }
+
+  .flexBetween {
+    @apply flex items-center justify-between;
+  }
+
+  .flexStart {
+    @apply flex items-center justify-start;
+  }
+
+  .flexEnd {
+    @apply flex items-center justify-end;
+  }
+
+  /* FONTS */
+  .regular-64 {
+    @apply text-[64px] font-[400] leading-[120%];
+  }
+
+  .regular-40 {
+    @apply text-[40px] font-[400] leading-[120%];
+  }
+
+  .regular-32 {
+    @apply text-[32px] font-[400];
+  }
+
+  .regular-24 {
+    @apply text-[24px] font-[400];
+  }
+
+  .regular-20 {
+    @apply text-[20px] font-[400];
+  }
+
+  .regular-18 {
+    @apply text-[18px] font-[400];
+  }
+
+  .regular-16 {
+    @apply text-[16px] font-[400];
+  }
+
+  .regular-14 {
+    @apply text-[14px] font-[400];
+  }
+
+  .medium-14 {
+    @apply text-[14px] font-[600];
+  }
+
+  .bold-88 {
+    @apply text-[88px] font-[700] leading-[120%];
+  }
+
+  .bold-64 {
+    @apply text-[64px] font-[700] leading-[120%];
+  }
+
+  .bold-52 {
+    @apply text-[52px] font-[700] leading-[120%];
+  }
+
+  .bold-40 {
+    @apply text-[40px] font-[700] leading-[120%];
+  }
+
+  .bold-32 {
+    @apply text-[32px] font-[700] leading-[120%];
+  }
+
+  .bold-20 {
+    @apply text-[20px] font-[700];
+  }
+
+  .bold-18 {
+    @apply text-[18px] font-[700];
+  }
+
+  .bold-16 {
+    @apply text-[16px] font-[700];
+  }
 }
